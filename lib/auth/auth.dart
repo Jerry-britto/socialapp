@@ -43,4 +43,9 @@ class Auth {
       print("Error occured due to ${e.toString}");
     }
   }
+
+  String? getCurrentUser() {
+    return  auth.currentUser?.phoneNumber;
+  }
+  
 }

@@ -8,7 +8,10 @@ import 'package:videoapp/firebase_options.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
-  runApp(const MaterialApp(debugShowCheckedModeBanner: false, home: MainApp(),));
+  runApp(const MaterialApp(
+    debugShowCheckedModeBanner: false,
+    home: MainApp(),
+  ));
 }
 
 class MainApp extends StatelessWidget {

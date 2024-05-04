@@ -15,7 +15,7 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   int currentIdx = 0;
 
-  List<Widget> screens = const[
+  List<Widget> screens = const [
     SearchVideo(),
     UploadVideo(),
   ];
@@ -34,20 +34,16 @@ class _HomeState extends State<Home> {
           )
         ],
       ),
-       bottomNavigationBar: CurvedNavigationBar(
-        items: const [
-          Icon(Icons.home),
-          Icon(Icons.add),
-          Icon(Icons.settings)
-        ],
+      bottomNavigationBar: CurvedNavigationBar(
+        items: const [Icon(Icons.home), Icon(Icons.add), Icon(Icons.settings)],
         // backgroundColor: Colors.black,
         color: Colors.orange,
         buttonBackgroundColor: Colors.white,
-        onTap: (value)=>setState(() {
+        onTap: (value) => setState(() {
           currentIdx = value;
         }),
-       ),
-       body: screens[currentIdx],
+      ),
+      body: screens[currentIdx],
     );
   }
 }
