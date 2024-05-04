@@ -51,8 +51,8 @@ class Upload {
 
     FirebaseFirestore.instance
         .collection("posts")
-        // .doc(user)
-        .add(videObj.toJson()).then((value) {
+        .doc(user)
+        .set(videObj.toJson()).then((value) {
           print("uploaded post");
         },).catchError((error){
           print("Error due to ${error}");
