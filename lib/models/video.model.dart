@@ -4,6 +4,7 @@ class Video {
   String description;
   String category;
   String location;
+  String user;
 
   Video({
     required this.url,
@@ -11,9 +12,11 @@ class Video {
     required this.description,
     required this.category,
     required this.location,
+    required this.user
   });
 
   Map<String,dynamic>toJson()=>{
+    "user":user,
     "url":url,
     "videoTitle":videoTitle,
     "description":description,

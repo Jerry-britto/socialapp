@@ -43,6 +43,7 @@ class Upload {
   Future<void> uploadPost(String user, String location, String videoTitle,
       String description, String category, String url) async {
     Video videObj = Video(
+        user:user,
         url: url,
         videoTitle: videoTitle,
         description: description,
@@ -51,11 +52,10 @@ class Upload {
 
     FirebaseFirestore.instance
         .collection("posts")
-        .doc(user)
-        .set(videObj.toJson()).then((value) {
+        .add(videObj.toJson()).then((value) {
           print("uploaded post");
         },).catchError((error){
-          print("Error due to ${error}");
+          print("Error due to $error");
         });
   }
 }
